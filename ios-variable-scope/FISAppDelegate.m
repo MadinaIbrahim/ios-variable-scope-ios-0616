@@ -25,4 +25,30 @@
  
  */
 
+-(NSMutableArray *)arrayByAddingString:(NSString *)string toArray:(NSMutableArray *)array {
+    NSMutableArray *copy = [[NSMutableArray alloc] initWithArray:array];
+    [copy addObject:string];
+    return copy;
+    
+}
+
+-(NSUInteger)countOfUppercaseStringsInArray:(NSArray *)array {
+    NSUInteger index = 0;
+    
+    for (NSString *string in array) {
+        NSString *stringCopy = [string uppercaseString];
+        if ([string isEqualToString:stringCopy]) {
+            index +=1;
+        }
+    }
+    
+    
+    return index;
+}
+
+-(void)removeAllObjectsFromArray:(NSMutableArray *)array {
+    [array removeAllObjects];
+
+}
+
 @end
